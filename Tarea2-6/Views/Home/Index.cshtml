@@ -1,0 +1,99 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <th>
+                    Codigo
+                </th>
+                <th></th>
+                <th>
+                    Titulo
+                </th>
+                <th></th>
+                <th>
+                    Director
+                </th>
+                <th></th>
+                <th>
+                    Autor Principal
+                </th>
+                <th></th>
+                <th>
+                    Num. Autores
+                </th>
+                <th></th>
+                <th>
+                    Duracion
+                </th>
+                <th></th>
+                <th>
+                    Estreno
+                </th>
+                <th></th>
+                <th>
+                    Borrar
+                </th>
+                <th></th>
+                <th>
+                    Modificar
+                </th>
+            </tr>
+            @foreach (var pelicula in Model)
+            {
+                <tr>
+                    <td>
+                        @pelicula.codigo
+                    </td>
+                    <th></th>
+                    <td>
+                        @pelicula.Titulo
+                    </td>
+                    <th></th>
+                    <td>
+                        @pelicula.Director
+                    </td>
+                    <th></th>
+                    <td>
+                        @pelicula.Actorp
+                    </td>
+                    <th></th>
+                    <td>
+                        @pelicula.No_Actores
+                    </td>
+                    <th></th>
+                    <td>
+                        @pelicula.Duracion
+                    </td>
+                    <th></th>
+                    <td>
+                        @pelicula.Estreno
+                    </td>
+                    <th></th>
+                    <td>
+                        <a href="/Home/Baja?codigo=@pelicula.Codigo">Borrar?</a>
+                    </td>
+                    <th></th>
+                    <td>
+                        <a href="/Home/Modificar?codigo=@pelicula.Codigo">Modificar?</a>
+                    </td>
+                    <th></th>
+                </tr>
+            }
+        </table>
+        <a href="/Home/Alta">Agregar?</a>
+
+    </div>
+</body>
+</html>
